@@ -1,2 +1,2 @@
-# pnp4nagios_web
-PNP4Nagios Web UI
+# pnp4nagios
+PNP4Nagios Web UI & templates
