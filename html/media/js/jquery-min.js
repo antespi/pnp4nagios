@@ -1,1 +1,1 @@
-../../../../javascript/jquery/jquery.min.js
+/usr/share/javascript/jquery/jquery.min.js
