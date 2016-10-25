@@ -7,7 +7,9 @@
   $def[1] = rrd::def("in_bytes", $RRDFILE[1], $DS[2], "AVERAGE");
   $def[1] .= rrd::def("out_bytes", $RRDFILE[1], $DS[3], "AVERAGE");
   $def[1] .= rrd::cdef("in_bits", "in_bytes,8,*");
+  $def[1] .= rrd::cdef("in_mbits", "in_bytes,1048576,/");
   $def[1] .= rrd::cdef("out_bits", "out_bytes,8,*");
+  $def[1] .= rrd::cdef("out_mbits", "out_bytes,1048576,/");
 
   # Thresholds
   $def[1] .= "HRULE:$WARN[1]#FFFF00 ";
@@ -15,13 +17,13 @@
 
   # In
   $def[1] .= rrd::area("in_bits", "#00FF00", "In");
-  $def[1] .= "GPRINT:in_bits:LAST:\"%6.2lf last\" " ;
-  $def[1] .= "GPRINT:in_bits:AVERAGE:\"%6.2lf avg\" " ;
-  $def[1] .= "GPRINT:in_bits:MAX:\"%6.2lf max\\n\" ";
+  $def[1] .= "GPRINT:in_mbits:LAST:\"%6.2lf last\" " ;
+  $def[1] .= "GPRINT:in_mbits:AVERAGE:\"%6.2lf avg\" " ;
+  $def[1] .= "GPRINT:in_mbits:MAX:\"%6.2lf max\\n\" ";
 
   # Out
   $def[1] .= rrd::line1("out_bits", "#0000FF", "Out");
-  $def[1] .= "GPRINT:out_bits:LAST:\"%6.2lf last\" " ;
-  $def[1] .= "GPRINT:out_bits:AVERAGE:\"%6.2lf avg\" " ;
-  $def[1] .= "GPRINT:out_bits:MAX:\"%6.2lf max\\n\" ";
+  $def[1] .= "GPRINT:out_mbits:LAST:\"%6.2lf last\" " ;
+  $def[1] .= "GPRINT:out_mbits:AVERAGE:\"%6.2lf avg\" " ;
+  $def[1] .= "GPRINT:out_mbits:MAX:\"%6.2lf max\\n\" ";
 ?>
