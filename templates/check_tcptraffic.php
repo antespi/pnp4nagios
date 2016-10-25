@@ -18,7 +18,7 @@
   $def[1] .= "GPRINT:in:MAX:\"%6.2lf max\\n\" ";
 
   # Out
-  $def[1] .= rrd::line("out", "#0000FF", "Out");
+  $def[1] .= rrd::line1("out", "#0000FF", "Out");
   $def[1] .= "GPRINT:out:LAST:\"%6.2lf last\" " ;
   $def[1] .= "GPRINT:out:AVERAGE:\"%6.2lf avg\" " ;
   $def[1] .= "GPRINT:out:MAX:\"%6.2lf max\\n\" ";
