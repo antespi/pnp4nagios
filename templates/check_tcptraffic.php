@@ -1,7 +1,7 @@
 <?php
 
   $ds_name[1] = "TCP traffic";
-  $opt[1] = "--vertical-label \"bits/s\" -l0 --title \"Traffic for $hostname / $servicedesc\" ";
+  $opt[1] = "--vertical-label \"bytes/s\" -l0 --title \"Traffic for $hostname / $servicedesc\" ";
 
   # In & Out
   $def[1] = rrd::def("in", $RRDFILE[1], $DS[2], "AVERAGE");
